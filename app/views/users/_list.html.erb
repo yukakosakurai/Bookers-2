@@ -1,0 +1,17 @@
+
+<h2>User info</h2>
+<%= attachment_image_tag user, :profile_image, size:'100x100', format: 'jpg',fallback: "default.png" %>
+<table class="table">
+<tr>
+<th><h4>name</h4></th>
+<th><%= user.name %></th>
+</tr>
+<table class="table">
+<tr>
+<th><h4>introduction</h4></th>
+<th><%= user.introduction %></th>
+</tr>
+</table>
+<div class="row">
+<%= link_to '', edit_user_path(@user) , class:"col-xs-11 btn btn-default glyphicon glyphicon-wrench" %>
+</div>
