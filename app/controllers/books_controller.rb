@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   #before_action :currect_user, only: [:edit, :update]
   
   def index
-    @user=current_user
+    @user=current_user #どのページでもログインしているユーザーを表示したい
     @book=Book.new
     @books=Book.all.order(created_at: :desc)
   end
@@ -13,9 +13,6 @@ class BooksController < ApplicationController
     @user=@book.user
   end
 
-  def new
-    @book=Book.new
-  end
 
   def create
     @user=current_user
